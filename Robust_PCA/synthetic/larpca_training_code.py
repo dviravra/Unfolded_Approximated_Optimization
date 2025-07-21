@@ -60,8 +60,8 @@ sio.savemat(filepath, {
 print(f"Saved data file to {filepath}")
 
 # Create approximate
-approx_iters_u = [4,6,8,10,12,14]
-approx_iters_v = [3,5,7,9,11,13,15]
+approx_iters_u = []
+approx_iters_v = []
 full_update_mask_U = []
 full_update_mask_V = []
 for t in range(1, maxIt):
