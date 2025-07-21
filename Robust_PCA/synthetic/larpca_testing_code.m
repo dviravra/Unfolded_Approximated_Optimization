@@ -2,12 +2,7 @@
 clear; clc;
 approxU = [];  
 approxV = [];
-
-
-uStr = strjoin(arrayfun(@num2str, approxU, 'UniformOutput', false), ',');
-vStr = strjoin(arrayfun(@num2str, approxV, 'UniformOutput', false), ',');
-
-    
+   
 %% Load Data
 data_path = "./data/n1000_r5_eta_matrix.mat";
 load(data_path);  
