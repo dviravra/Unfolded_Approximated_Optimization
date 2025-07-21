@@ -1,7 +1,7 @@
 %% Testing code for LARPCA 
 clear; clc;
-approxU = [4,6,8,10,12,14];;  
-approxV = [3,5,7,9,11,13,15];
+approxU = [];  
+approxV = [];
 
 
 uStr = strjoin(arrayfun(@num2str, approxU, 'UniformOutput', false), ',');
@@ -9,14 +9,14 @@ vStr = strjoin(arrayfun(@num2str, approxV, 'UniformOutput', false), ',');
 
     
 %% Load Data
-data_path = "./data/n1000_r5_alpha0.1_eta_is_matrix_2025_07_21_17-52.mat";
+data_path = "./data/n1000_r5_eta_matrix.mat";
 load(data_path);  
 [n, r] = size(U_star);  
 X_star = sparse(double(U_star * V_star'));  % ground truth
 Y = sparse(double(Y_star));  
 
 %% Load Model
-model_path = "./trained_models/LRPCA_alpha_0.1_2025_07_21_17-52.mat";
+model_path = "./trained_models/LARPCA_r5_approxU_4,6,8,10,12,14_approxV_3,5,7,9,11,13,15.mat";
 load(model_path);  
 zeta = double(ths) * (1000/n) * (r/5);  % thresholds
 etaU = double(stepU);  % matrix step sizes for U, shape: [maxIt x d1 x r]
